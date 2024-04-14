@@ -1,0 +1,187 @@
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2024
+ */
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root{
+    /**
+   * colors
+   */ 
+   --bg-scrollbar : hsl(231, 12%, 12%);
+   --color-scrollbar : hsl(39, 100%, 50%);
+   --marigold: hsl(210, 11%, 15%);
+   --platinum: hsl(0, 0%, 90%);
+   --white: hsl(0, 0%, 100%);
+   /**
+   * typography
+   */
+   --ff-poppins: 'Poppins', sans-serif;
+
+   /**
+   * transition
+   */
+   --radius-circle: 50%;
+   --transition-1: 0.25s ease;
+
+   /**
+   * spacing
+   */
+
+   /**
+   * clip path
+   */
+}
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a { text-decoration: none; }
+  
+  li { list-style: none; }
+  
+  a,
+  img,
+  span,
+  input,
+  button,
+  ion-icon { display: block; }
+  
+  button {
+    font: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input {
+    font: inherit;
+    width: 100%;
+    border: none;
+  }
+  
+  html {
+    font-family: var(--ff-poppins);
+    scroll-behavior: smooth;
+  }
+  
+  body { overflow: hidden;
+    background: #151d2a;
+  }
+  
+  body.active { overflow-y: hidden; }
+  
+  ::-webkit-scrollbar { width: 4px; }
+  
+  ::-webkit-scrollbar-track { background: var(--bg-scrollbar); }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar);
+    border-radius: 10px;
+  }
+
+/*-----------------------------------*\
+#CUSTOM FONT
+\*-----------------------------------*/
+
+@font-face {
+    font-family:'poppins';
+    src: url(../fonts/poppins.ttf);
+}
+
+/*-----------------------------------*\
+  #STYLE PARTICLES.JS
+\*-----------------------------------*/
+#particles-js{
+  width: 100%;
+  height: 100%;
+  /*background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)), url("../picture/bg-particles_js.jpg");*/
+  /*background: radial-gradient(#281c3e, #0f051d);*/
+  /*background: rgba(94, 8, 16, 0.1);*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:center;
+}
+
+.welcome_openLang{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  font-size: 30px;
+  color: white;
+  font-family: "poppins";
+}
+
+.start_openLang{
+  margin-top: 30px;
+  padding: 15px;
+  background: #D0E4FF;
+  text-align: center;
+  border-radius: 8px;
+  color: #1775F1;
+}
+.start_openLang:hover{
+  padding: 15px;
+  background: #1775F1;
+  text-align: center;
+  border-radius: 8px;
+  color: white;
+}
+
+/*-----------------------------------*\
+  #LOADING
+\*-----------------------------------*/
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--white);
+  display: grid;
+  place-items: center;
+  transition: var(--transition-1);
+  z-index: 6;
+}
+
+.loading-container.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-circle {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--platinum);
+  border-block-start-color: var(--marigold);
+  border-radius: var(--radius-circle);
+  animation: loading 0.5s linear infinite;
+}
+
+@keyframes loading {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(1turn); }
+}
+
+.loading-container.loaded .loading-circle {
+  animation-iteration-count: 1;
+}
+
+
+
+
